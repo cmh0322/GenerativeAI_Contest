@@ -64,7 +64,7 @@ void loop() {
         Firebase.RTDB.setFloat(&fbdo, "/live_session/bpm", bpm);
     }
 
-    // [중략] 녹음 버튼 감지 시 SD에 저장 후 아래 함수 실행
+    // [중략] 녹음 버튼 감지 시 SD에 저장 후 함수 실행
     uploadToFirebase("/recording.wav", "session_001.wav");
 }
 
