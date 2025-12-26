@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌿 Healing Horizon
+# 🌿 MindStep
 ### AI-Powered PTSD Exposure Therapy & Bio-Signal Monitoring System
 
 <p>
@@ -23,7 +23,7 @@
 
 ## 📖 Overview
 
-**Healing Horizon**은 PTSD(외상 후 스트레스 장애) 환자의 효과적인 노출 치료(Exposure Therapy)를 돕기 위해 설계된 통합 시스템입니다.
+**MindStep**은 PTSD(외상 후 스트레스 장애) 환자의 효과적인 노출 치료(Exposure Therapy)를 돕기 위해 설계된 통합 시스템입니다.
 
 기존의 고비용/고정된 치료 방식에서 벗어나, **임베디드 하드웨어**를 통해 환자의 심박수($BPM$)와 음성을 실시간으로 수집하고, **멀티모달 AI 파이프라인(STT → LLM → Video Gen)**을 거쳐 환자 개인에게 최적화된 시네마틱 치유 영상을 자동으로 생성합니다.
 
@@ -40,7 +40,7 @@
 
 <div align="center">
   <img src="./images/system_architecture.png" width="80%" alt="System Architecture Diagram">
-  <p><i>Fig 1. Healing Horizon 전체 시스템 구성도</i></p>
+  <p><i>Fig 1. MindStep 전체 시스템 구성도</i></p>
 </div>
 
 ---
@@ -76,4 +76,4 @@
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/username/healing-horizon.git](https://github.com/username/healing-horizon.git)
+git clone [https://github.com/username/MindStep.git](https://github.com/username/MindStep.git)
