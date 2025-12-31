@@ -1,0 +1,6 @@
+openai==0.28.1
+firebase-admin
+flask
+flask-cors
+requests
+python-dotenv

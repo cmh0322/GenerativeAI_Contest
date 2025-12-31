@@ -1,79 +1,111 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MindStep README</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #24292e; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; margin-top: 24px; }
+        code { background-color: rgba(27,31,35,0.05); padding: 0.2em 0.4em; border-radius: 3px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+        pre { background-color: #f6f8fa; padding: 16px; border-radius: 6px; overflow: auto; }
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+        table th, table td { border: 1px solid #dfe2e5; padding: 6px 13px; }
+        table tr:nth-child(even) { background-color: #f6f8fa; }
+        blockquote { padding: 0 1em; color: #6a737d; border-left: 0.25em solid #dfe2e5; margin: 0; }
+        .emoji { font-style: normal; }
+    </style>
+</head>
+<body>
 
-# 🌿 Healing Horizon
-### AI-Powered PTSD Exposure Therapy & Bio-Signal Monitoring System
+    <h1><span class="emoji">🧠</span> MindStep: Gen-AI 기반 PTSD 맞춤형 치료 시스템</h1>
+    <p><strong>MindStep</strong>은 생체 데이터 분석과 생성형 AI 기술을 결합하여 PTSD(외상 후 스트레스 장애) 환자를 위한 개인 맞춤형 단계별 치료 콘텐츠를 제공하는 차세대 심리 치료 솔루션입니다.</p>
 
-<p>
-  <img src="https://img.shields.io/badge/ESP32--S3-E74C3C?style=for-the-badge&logo=espressif&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/OpenAI_API-412991?style=for-the-badge&logo=openai&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
-</p>
+    <hr>
 
-<br/>
+    <h2><span class="emoji">🌟</span> 주요 기능 (Key Features)</h2>
+    
+    <h3>1. 실시간 생체 데이터 모니터링 (Edge Device)</h3>
+    <ul>
+        <li><strong>Heart Rate Monitoring</strong>: MAX30105 센서를 활용하여 환자의 심박수(BPM)를 실시간으로 측정합니다.</li>
+        <li><strong>Safe Zone Alert</strong>: 환자의 심박수가 임계치(예: 138 BPM)를 초과하여 과각성 상태가 감지될 경우 즉시 시청 중단 경고를 발생시킵니다.</li>
+    </ul>
 
-> **"기술로 마음을 치유하다"** <br/> 실시간 생체 신호와 생성형 AI를 결합한 차세대 디지털 치료제(DTx) 솔루션
+    <h3>2. AI 기반 상담 심층 분석 (Backend)</h3>
+    <ul>
+        <li><strong>Whisper STT</strong>: 상담 중 발생하는 음성 데이터를 텍스트로 정교하게 변환합니다.</li>
+        <li><strong>GPT-4o 분석</strong>: 상담 내용을 바탕으로 감각, 신체, 인지, 감정, 회피의 5가지 핵심 카테고리별 PTSD 키워드를 추출합니다.</li>
+    </ul>
 
+    <h3>3. 맞춤형 치료 콘텐츠 생성 (Gen-AI)</h3>
+    <ul>
+        <li><strong>Adaptive Video Generation</strong>: 분석된 트라우마 맥락을 바탕으로 Luma/Runway AI를 통해 단계별 치료 영상을 생성합니다.</li>
+        <li><strong>4단계 노출 치료</strong>: 호흡 이완(1단계)부터 실제 상황 시뮬레이션(4단계)까지 전문가의 판단에 따른 점진적 노출을 지원합니다.</li>
+    </ul>
 
-</div>
+    <h2><span class="emoji">🛠</span> 기술 스택 (Tech Stack)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>기술</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Edge</strong></td>
+                <td>ESP32, MAX30105, I2S Mic, Arduino C++</td>
+            </tr>
+            <tr>
+                <td><strong>Backend</strong></td>
+                <td>Python, Flask, OpenAI (Whisper, GPT-4o), Firebase Admin SDK</td>
+            </tr>
+            <tr>
+                <td><strong>Frontend</strong></td>
+                <td>React, Tailwind CSS, Lucide-react, Firebase SDK</td>
+            </tr>
+            <tr>
+                <td><strong>Storage</strong></td>
+                <td>Firebase Realtime Database, Firestore, Cloud Storage</td>
+            </tr>
+            <tr>
+                <td><strong>Video AI</strong></td>
+                <td>Luma Dream Machine, Runway Gen-3</td>
+            </tr>
+        </tbody>
+    </table>
 
----
+    <h2><span class="emoji">📂</span> 파일 구조 (Project Structure)</h2>
+<pre><code>MindStep/
+├── ESP32.ino              # 엣지 디바이스: 데이터 수집 및 전송
+├── main.py                # 백엔드: AI 분석 및 API 서버
+├── config.py              # 설정: API 키 및 환경 변수
+├── index.html             # 프론트엔드: 전문의용 대시보드 UI
+├── script.js              # 프론트엔드: Firebase 연동 및 동적 로직
+├── style.css              # 디자인: EMDR 애니메이션 및 CSS 스타일링
+├── serviceAccountKey.json # 인증: Firebase 서비스 계정 키
+└── requirements.txt       # 의존성: 파이썬 라이브러리 목록</code></pre>
 
-## 📖 Overview
+    <h2><span class="emoji">🚀</span> 시작 가이드 (Quick Start)</h2>
 
-**Healing Horizon**은 PTSD(외상 후 스트레스 장애) 환자의 효과적인 노출 치료(Exposure Therapy)를 돕기 위해 설계된 통합 시스템입니다.
+    <h3>1. Backend 설정</h3>
+<pre><code>pip install -r requirements.txt
+python main.py</code></pre>
+    <blockquote>config.py에 OpenAI 및 Firebase API 키를 설정해야 합니다.</blockquote>
 
-기존의 고비용/고정된 치료 방식에서 벗어나, **임베디드 하드웨어**를 통해 환자의 심박수($BPM$)와 음성을 실시간으로 수집하고, **멀티모달 AI 파이프라인(STT → LLM → Video Gen)**을 거쳐 환자 개인에게 최적화된 시네마틱 치유 영상을 자동으로 생성합니다.
+    <h3>2. Frontend 설정</h3>
+    <ul>
+        <li>index.html을 브라우저에서 실행하거나 React 환경에서 빌드합니다.</li>
+        <li>script.js에 본인의 Firebase 프로젝트 설정을 입력하세요.</li>
+    </ul>
 
-### 🌟 Key Features
+    <h3>3. Edge Device 설정</h3>
+    <ul>
+        <li>Arduino IDE를 통해 ESP32.ino를 보드에 업로드합니다.</li>
+        <li>WiFi 크리덴셜 및 Firebase 호스트 주소를 수정하세요.</li>
+    </ul>
 
-* ❤️ **실시간 바이오피드백**: ESP32-S3 기반 엣지 디바이스로 심박수를 모니터링하고 과각성 상태를 즉각 감지합니다.
-* 🧠 **멀티모달 AI 분석**: 환자의 구술 내용(Text)과 생체 신호(Data)를 결합하여 심리 상태를 입체적으로 분석합니다.
-* 🎬 **시네마틱 영상 생성**: 분석된 데이터를 바탕으로 Luma/Runway AI를 활용해 고화질의 맞춤형 치료 영상을 생성합니다.
-* 🖥️ **직관적인 대시보드**: React 기반 웹 인터페이스로 치료 과정과 결과를 한눈에 시각화합니다.
+    <hr>
+    <p><em>MindStep은 기술을 통해 트라우마를 이겨낼 수 있는 가장 안전한 한 걸음을 함께합니다.</em></p>
 
----
-
-## 🏗️ System Architecture
-
-<div align="center">
-  <img src="./images/system_architecture.png" width="80%" alt="System Architecture Diagram">
-  <p><i>Fig 1. Healing Horizon 전체 시스템 구성도</i></p>
-</div>
-
----
-
-## 🎥 Preview (Demo)
-
-| **Hardware (Edge Device)** | **Software (Web Dashboard)** |
-| :---: | :---: |
-| <img src="./images/hardware_demo.gif" width="400px" alt="Hardware Demo"> | <img src="./images/dashboard_demo.gif" width="400px" alt="Dashboard Demo"> |
-| *ESP32 & 실시간 심박 센서 작동 모습* | *실시간 BPM 그래프 및 영상 생성 결과* |
-
----
-
-## 🛠️ Tech Stack & Tools
-
-| Category | Technology Stack |
-| :--- | :--- |
-| **Embedded (Edge)** | ![ESP32](https://img.shields.io/badge/-ESP32--S3-black?logo=espressif) `Arduino Core` `FreeRTOS` <br/> **Sensors:** MAX30102 (PPG), INMP441 (I2S Mic) |
-| **Cloud & DB** | ![Firebase](https://img.shields.io/badge/-Firebase-black?logo=firebase) `Realtime Database` `Cloud Storage` |
-| **AI Backend** | ![Python](https://img.shields.io/badge/-Python-black?logo=python) <br/> **Models:** `OpenAI Whisper (STT)` `GPT-4o (Reasoning)` `Luma/Runway (Video Gen)` |
-| **Frontend** | ![React](https://img.shields.io/badge/-React.js-black?logo=react) ![Tailwind](https://img.shields.io/badge/-Tailwind-black?logo=tailwindcss) `Lucide Icons` |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-* ESP32-S3 보드 및 센서 모듈
-* Firebase 프로젝트 계정 및 API Key
-* OpenAI / Luma API Key
-
-### Installation
-
-**1. Clone the repository**
-```bash
-git clone [https://github.com/username/healing-horizon.git](https://github.com/username/healing-horizon.git)
+</body>
+</html>
