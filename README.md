@@ -62,11 +62,16 @@ $$Alert_{status} = \begin{cases} \text{Critical (STOP)} & \text{if } BPM > 138 \
 
 ```plaintext
 MindStep/
-├── ESP32.ino              # Edge: 데이터 수집 및 Firebase 전송
-├── main.py                # Backend: 분석 엔진 및 API 서버
-├── config.py              # Settings: API Keys & Env Variables
-├── src/                   # Frontend: React Source Code
-│   ├── components/        # Dashboard & EMDR Components
-│   └── hooks/             # Firebase Realtime Hooks
-├── serviceAccountKey.json # Firebase 인증 키
-└── requirements.txt       # Python 의존성 목록
+├── 📂 Backend/                   # AI 분석 및 서버 로직 레이어
+│   ├── 📄 config.py              # OpenAI 및 Firebase API 환경 설정
+│   ├── 📄 main.py                # Flask 서버 및 AI 파이프라인 엔진
+│   ├── 📄 requirements.txt       # Python 의존성 라이브러리 목록
+│   └── 🔑 serviceAccountKey.json # Firebase 서비스 계정 인증 키
+├── 📂 EdgeDevice/                # 임베디드 데이터 수집 레이어
+│   └── 📜 ESP32.ino              # 센서 제어 및 Cloud 통신 펌웨어
+├── 📂 FrontEnd/                  # 사용자 인터페이스 레이어
+│   ├── 🌐 index.html             # 치료 모니터링 대시보드 UI
+│   ├── 📜 script.js              # 실시간 데이터 연동 및 시각화 로직
+│   └── 🎨 style.css              # UI 디자인 및 애니메이션 스타일링
+├── 📂 images/                    # 아키텍처 및 시스템 리소스 이미지
+└── 📄 README.md                  # 프로젝트 매뉴얼
